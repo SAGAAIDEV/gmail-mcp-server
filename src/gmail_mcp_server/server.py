@@ -39,9 +39,15 @@ logger.info(f"Current directory: {os.getcwd()}")
 
 # Gmail API configuration
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
-BASE_DIR = "/Users/ajbrown/Desktop/claude/gmail-mcp-server"
-CREDENTIALS_FILE = os.path.join(BASE_DIR, "credentials.json")
-TOKEN_FILE = os.path.join(BASE_DIR, "token.json")
+
+# Get credential paths from environment
+CREDENTIALS_FILE = os.getenv('GMAIL_CREDENTIALS_FILE')
+TOKEN_FILE = os.getenv('GMAIL_TOKEN_FILE')
+
+if not CREDENTIALS_FILE:
+    raise ValueError("GMAIL_CREDENTIALS_FILE environment variable must be set")
+if not TOKEN_FILE:
+    raise ValueError("GMAIL_TOKEN_FILE environment variable must be set")
 
 logger.info(f"Using credentials file: {CREDENTIALS_FILE}")
 logger.info(f"Using token file: {TOKEN_FILE}")
