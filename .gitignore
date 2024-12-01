@@ -24,6 +24,7 @@ wheels/
 venv/
 env/
 ENV/
+.env
 
 # IDEs
 .idea/
@@ -37,3 +38,16 @@ ENV/
 # Google OAuth
 credentials.json
 token.json
+
+# Conda
+/conda-env/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Logs
+*.log
+/tmp/
