@@ -6,11 +6,10 @@ authors = [
     {name = "AJ Brown", email = "aj@example.com"},
 ]
 dependencies = [
-    "modelcontextprotocol>=0.1.0",
+    "mcp @ file:///Users/ajbrown/Desktop/claude/python-sdk",
     "google-auth-oauthlib>=1.0.0",
     "google-auth-httplib2>=0.1.0",
     "google-api-python-client>=2.0.0",
-    "python-dotenv>=1.0.0",
 ]
 requires-python = ">=3.10"
 readme = "README.md"
@@ -22,3 +21,6 @@ build-backend = "hatchling.build"
 
 [project.scripts]
 gmail-mcp-server = "gmail_mcp_server.server:main"
+
+[tool.hatch.metadata]
+allow-direct-references = true
